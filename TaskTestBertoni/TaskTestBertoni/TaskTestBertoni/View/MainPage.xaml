@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TaskTestBertoni.MainPage"
+             Title="Task Bertoni App">
+
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Task!" 
+           HorizontalOptions="Center" />
+        <ListView x:Name="ListViews"
+                  CachingStrategy="RecycleElement"
+                  Margin="50,0,50,0"
+                  ItemTapped="Handle_ItemTapped">
+            <!--Built in Cells-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#eee"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}"
+                                TextColor="#f35e20"
+                                Margin="15,0,0,0"/>
+                                <Label Text="{Binding StatusName}"
+                                HorizontalOptions="CenterAndExpand"
+                                TextColor="#503026" />
+                                <Button x:Name="btnDeleted"
+                                        Text="-"
+                                        TextColor="White"
+                                        Margin="20,5,20,20"
+                                        WidthRequest="50"
+                                        HeightRequest="35"
+                                        BackgroundColor="Red"
+                                        Clicked="btnDeleted_Clicked"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Text="Note: Edit Tap List and Deleted Buttom!" 
+           HorizontalOptions="Center" />
+        <Image Aspect="AspectFit" 
+               Source="https://static.makeuseof.com/wp-content/uploads/2017/02/Shared-Task-List-Featured-670x335.jpg"/>
+        <Button x:Name="btnAdd"
+                Text="+"
+                FontSize="Title"
+                BorderColor="#2b3c3c" 
+                BorderWidth="0" 
+                FontAttributes="Bold" 
+                BackgroundColor="#4ba862" 
+                BorderRadius="50" 
+                TextColor="White" 
+                HorizontalOptions="End" 
+                WidthRequest="70" 
+                HeightRequest="70" 
+                Margin="0,0,20,22" 
+                VerticalOptions="End"
+                Clicked="BtnAdd_Clicked"/>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TaskTestBertoni.View.AddTaskBertoniPage"
+             Title="Add Task">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" >
+            <Label Text="Add a Task"
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="Name"
+                   WidthRequest="300"
+                   HorizontalOptions="CenterAndExpand"
+                   Placeholder="Name Task"/>
+            <StackLayout Orientation="Horizontal"
+                         Margin="150,0,150,0">
+                <Label Text="Completed"/>
+                <CheckBox x:Name="Status"
+                          Margin="0,-10,0,0"/>
+            </StackLayout>
+
+            <Button x:Name="btnAdd"
+                    Text="Add Task"
+                    FontSize="Title"
+                    BorderColor="#2b3c3c" 
+                    BorderWidth="0" 
+                    FontAttributes="Bold" 
+                    BackgroundColor="Accent" 
+                    BorderRadius="20" 
+                    TextColor="White" 
+                    HorizontalOptions="Center" 
+                    WidthRequest="150" 
+                    HeightRequest="50" 
+                    Margin="0,0,20,22" 
+                    VerticalOptions="Center"
+                    Clicked="btnAdd_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
